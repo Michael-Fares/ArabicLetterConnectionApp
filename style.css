@@ -1,0 +1,31 @@
+div {
+  font-size: 50px;
+}
+#keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  direction: rtl;
+}
+
+.letter-button {
+  margin: 10px 20px;
+  cursor: pointer;
+}
+ .dropper{
+display: flex;
+align-items: center;
+justify-content: flex-start;
+width: 600px;
+height: 100px;
+background-color: lightblue;
+direction: rtl;
+padding-right: 20px;
+margin: 20px;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
