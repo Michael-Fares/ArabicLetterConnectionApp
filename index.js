@@ -1,23 +1,8 @@
+// global variables
+let testArr = ['جــامــعــة', 'ســيــارة', 'صــبــاح']
+let random = Math.floor(Math.random() * testArr.length)
+
 const synth = window.speechSynthesis;
-console.log(synth)
-let voices = []
-voices = synth.getVoices()
-console.log(voices)
-
-
-// this works! Can had code the words into here
-let testArr = ['جـامــعـة', 'ســيـارة', 'صــبـاح']
-
-const makeVoice = () => {
-const utterThis = new SpeechSynthesisUtterance(testArr[1])
-utterThis.lang = "ar-SA"
-utterThis.pitch = 1;
-utterThis.rate = 1;
-console.log(utterThis)
-synth.speak(utterThis)
-}
-
-
 
 let letters = []
 class Connector {
@@ -165,6 +150,8 @@ function drop_handler(ev) {
  ev.target.appendChild(div);
 }
 
+
+
 // undo button event listener
 const makeUndo = () => {
   const undo = document.querySelector('#undo')
@@ -185,9 +172,8 @@ makeUndo()
 const testWord = () => {
   let grader = []
   // sample correct word
-  let correctWord = 'جامعة'
-  const correctWordArr = correctWord.split('');
-  console.log(correctWordArr)
+  let correctWord = testArr[random]
+  console.log(correctWord)
   
   let writtenWord = wordHolder.children
 
@@ -196,6 +182,32 @@ const testWord = () => {
   grader.push(writtenWord[i].innerText)
   }
   console.log(grader)
-  console.log(grader.join('ـ'))
+  let gradedWord = grader.join('')
+  if(gradedWord === correctWord) {
+  alert('CORRECT')
+  location.reload()
+  } else {
+   return 
+  }
 }
+   
+const sayWord = () => {
+const utterThis = new SpeechSynthesisUtterance(testArr[random])
+utterThis.lang = "ar-SA"
+utterThis.pitch = 1;
+utterThis.rate = 1;
+console.log(utterThis)
+synth.speak(utterThis)
+  }
 
+
+// play word button event listener
+const makePlay = () => {
+  const play = document.querySelector('#play')
+  play.addEventListener('click', function(event){
+    event.preventDefault();
+      sayWord()
+  }
+)
+}
+makePlay()
