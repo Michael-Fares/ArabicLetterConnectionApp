@@ -97,6 +97,7 @@ const hamzaIsolated = new NonConnector('ء', 'ء','HamzaIsolated')
 const alifTanween = new NonConnector('اً', 'اً','alifTanween')
 const alifMadaa = new NonConnector('آ', 'آ','alifMadda')
 const alifMaqsura = new NonConnector('ى', 'ـى','alifMaqsura')
+const laamAlif = new NonConnector('ـلا','لا', 'laamAlif')
 
 
 
