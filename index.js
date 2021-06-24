@@ -1,3 +1,22 @@
+const synth = window.speechSynthesis;
+console.log(synth)
+let voices = []
+voices = synth.getVoices()
+console.log(voices)
+
+
+// this works! Can had code the words into here
+let testArr = ['جـامــعـة', 'ســيـارة', 'صــبـاح']
+
+const makeVoice = () => {
+const utterThis = new SpeechSynthesisUtterance(testArr[1])
+utterThis.lang = "ar-SA"
+utterThis.pitch = 1;
+utterThis.rate = 1;
+console.log(utterThis)
+synth.speak(utterThis)
+}
+
 
 
 let letters = []
