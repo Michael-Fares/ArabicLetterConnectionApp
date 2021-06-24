@@ -3,14 +3,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Arabic Letter Connecting Tutor</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <link href="./style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <div class="header engfont">
     <p id="instructions">
       Click "Play Word" button to hear a random Arabic word. 
       Spell the word you hear by dragging to the blue box.
       Make sure each letter is in the correct shape based on its position in the word! Click on a letter to change between all of its available shapes. 
     </p>
+    <button id="font">Handwriting Font</button>
+
+  </div>
     <hr>
     <div id="keyboard"></div>
     <hr>
@@ -23,7 +31,7 @@
 <button id="play">Play Word</button>
 <button id="show">Show Word</button>
 <button id="undo">Undo</button>
-<button onclick="testWord()">Test Word</button>
+<button onclick="testWord()">Check Word</button>
 </div>
 </div>
 
