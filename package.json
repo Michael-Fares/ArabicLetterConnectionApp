@@ -1,0 +1,22 @@
+{
+  "name": "arabicletterconnectionapp",
+  "description": "App to connect Arabic letters",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michael-Fares/ArabicLetterConnectionApp.git"
+  },
+  "author": "Michael Fares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michael-Fares/ArabicLetterConnectionApp/issues"
+  },
+  "homepage": "https://github.com/Michael-Fares/ArabicLetterConnectionApp#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}

@@ -1,3 +1,5 @@
+
+
 let letters = []
 class Connector {
   constructor(isolated, initial, medial, final, name) {
@@ -176,3 +178,4 @@ const testWord = () => {
   console.log(grader)
   console.log(grader.join('ـ'))
 }
+
