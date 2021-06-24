@@ -1,5 +1,5 @@
 // global variables
-let testArr = ['جــامــعــة', 'ســيــارة', 'صــبــاح']
+let testArr = ['جــامــعــة', 'ســيــارة', 'صــبــاح', 'صــاحــبــي']
 let random = Math.floor(Math.random() * testArr.length)
 
 const synth = window.speechSynthesis;
@@ -211,3 +211,23 @@ const makePlay = () => {
 )
 }
 makePlay()
+
+// show word event listener
+
+const makeShowWord = () => {
+  const word = document.createElement('div')
+  const display = document.querySelector('#show-word')
+  display.appendChild(word)
+  const show = document.querySelector('#show')
+  show.addEventListener('click', function(){
+    if(word.innerText === '') {
+    word.innerText = testArr[random]
+    show.innerText = 'Hide Word'
+    } else {
+      word.innerText = '';
+      show.innerText = 'Show Word'
+
+    }
+  })
+}
+makeShowWord()
