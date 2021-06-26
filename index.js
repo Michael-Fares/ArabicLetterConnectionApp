@@ -187,7 +187,10 @@ const testWord = () => {
   alert('CORRECT')
   location.reload()
   } else {
-   return 
+  wordHolder.classList.add('animate__headShake')
+  setTimeout(function(){  wordHolder.classList.remove('animate__headShake')
+}, 500)
+wordHolder.classList.add('animate__headShake')
   }
 }
    
@@ -231,3 +234,32 @@ const makeShowWord = () => {
   })
 }
 makeShowWord()
+
+// font picking button
+const makeFont = () => {
+  const fonts = document.querySelector('#fonts')
+  const submit = document.querySelector('#select-font')
+  const glyphs = document.getElementsByClassName('letter-button')
+  submit.addEventListener('click', function(){
+    for(let i=0; i<glyphs.length; i++) {
+    if(fonts.value === 'handwriting'){
+      glyphs[i].style.fontFamily = 'Aref Ruqaa, serif'
+      wordHolder.style.fontFamily = 'Aref Ruqaa, serif'
+    }
+    if(fonts.value === 'print-font-1'){
+      glyphs[i].style.fontFamily = 'Lateef, cursive'
+      wordHolder.style.fontFamily = 'Lateef, cursive'
+    }
+    if(fonts.value === 'print-font-2'){
+      glyphs[i].style.fontFamily = 'Mirza, cursive'
+      wordHolder.style.fontFamily = 'Mirza, cursive'
+    }
+    if(fonts.value === 'default') {
+      glyphs[i].style.fontFamily = 'serif'
+      wordHolder.style.fontFamily = 'serif'
+
+    }
+  }
+  })
+}
+makeFont()

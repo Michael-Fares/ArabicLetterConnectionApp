@@ -3,6 +3,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Arabic Letter Connecting Tutor</title>
+    <link rel="stylesheet" href="./animate.min.css">
+
+<!-- handriting font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&display=swap" rel="stylesheet">
+
+<!-- print font 1 -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Mirza&family=Rakkas&display=swap" rel="stylesheet">
+
+<!-- print font 2 -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&family=Mirza&family=Rakkas&display=swap" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -11,12 +31,21 @@
   </head>
   <body>
     <div class="header engfont">
+      <h1 class="title">Arabic Word Spelling Tutor</h1>
     <p id="instructions">
       Click "Play Word" button to hear a random Arabic word. 
-      Spell the word you hear by dragging to the blue box.
+      Spell the word you hear by dragging its letters to the blue box.
       Make sure each letter is in the correct shape based on its position in the word! Click on a letter to change between all of its available shapes. 
     </p>
-    <button id="font">Handwriting Font</button>
+    <label for="cars">Letter Font Style:</label>
+
+    <select name="fonts" id="fonts">
+      <option value="default">Default</option>
+      <option value="print-font-1">Lateef</option>
+      <option value="print-font-2">Mirza</option>
+      <option value="handwriting">Handwriting</option>
+    </select>
+    <button id="select-font">Submit</button>
 
   </div>
     <hr>
@@ -25,7 +54,7 @@
     
     <div class="wrapper">
       <div id="show-word"></div>
-  <div id="word-holder" class="dropper word">
+  <div id="word-holder" class="dropper word animate__animated">
 </div>
 <div class="vertical engfont">
 <button id="play">Play Word</button>
