@@ -1,5 +1,21 @@
 // global variables
-let testArr = ['جــامــعــة', 'ســيــارة', 'صــبــاح', 'صــاحــبــي']
+let testArr = [
+{
+  a: 'جــامــعــة',
+  e: 'university'
+},
+{
+  a: 'ســيــارة',
+  e: 'car'
+},
+{
+   a: 'صــبــاح',
+   e: 'morning'
+},
+{
+   a: 'بـاب',
+   e: 'door'
+}]
 let random = Math.floor(Math.random() * testArr.length)
 
 const synth = window.speechSynthesis;
@@ -109,6 +125,7 @@ const makeKeyboard = () => {
   const keyboard = document.getElementById('keyboard')
   letters.map((letter) => {
   const text = document.createTextNode(letter.isolated)
+  letter.morph()
   const div = document.createElement('div')
     div.classList.add('letter-button')
     div.setAttribute('draggable', 'true')
@@ -172,7 +189,7 @@ makeUndo()
 const testWord = () => {
   let grader = []
   // sample correct word
-  let correctWord = testArr[random]
+  let correctWord = testArr[random].a
   console.log(correctWord)
   
   let writtenWord = wordHolder.children
@@ -195,10 +212,10 @@ wordHolder.classList.add('animate__headShake')
 }
    
 const sayWord = () => {
-const utterThis = new SpeechSynthesisUtterance(testArr[random])
+const utterThis = new SpeechSynthesisUtterance(testArr[random].a)
 utterThis.lang = "ar-SA"
 utterThis.pitch = 1;
-utterThis.rate = 1;
+utterThis.rate = 0.8;
 console.log(utterThis)
 synth.speak(utterThis)
   }
@@ -224,7 +241,7 @@ const makeShowWord = () => {
   const show = document.querySelector('#show')
   show.addEventListener('click', function(){
     if(word.innerText === '') {
-    word.innerText = testArr[random]
+    word.innerText = testArr[random].a
     show.innerText = 'Hide Word'
     } else {
       word.innerText = '';
@@ -238,26 +255,29 @@ makeShowWord()
 // font picking button
 const makeFont = () => {
   const fonts = document.querySelector('#fonts')
-  const submit = document.querySelector('#select-font')
   const glyphs = document.getElementsByClassName('letter-button')
-  submit.addEventListener('click', function(){
+  const display = document.querySelector('#show-word')
+  fonts.addEventListener('change', function(){
     for(let i=0; i<glyphs.length; i++) {
     if(fonts.value === 'handwriting'){
       glyphs[i].style.fontFamily = 'Aref Ruqaa, serif'
       wordHolder.style.fontFamily = 'Aref Ruqaa, serif'
+      display.style.fontFamily = 'Aref Ruqaa, serif'
     }
     if(fonts.value === 'print-font-1'){
       glyphs[i].style.fontFamily = 'Lateef, cursive'
       wordHolder.style.fontFamily = 'Lateef, cursive'
+      display.style.fontFamily = 'Lateef, cursive'
     }
     if(fonts.value === 'print-font-2'){
       glyphs[i].style.fontFamily = 'Mirza, cursive'
       wordHolder.style.fontFamily = 'Mirza, cursive'
+      display.style.fontFamily = 'Mirza, cursive'
     }
     if(fonts.value === 'default') {
       glyphs[i].style.fontFamily = 'serif'
       wordHolder.style.fontFamily = 'serif'
-
+      display.style.fontFamily = 'serif'
     }
   }
   })

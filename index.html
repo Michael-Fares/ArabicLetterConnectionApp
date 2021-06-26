@@ -30,7 +30,7 @@
     <link href="./style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="header engfont">
+    <header class="header engfont">
       <h1 class="title">Arabic Word Spelling Tutor</h1>
     <p id="instructions">
       Click "Play Word" button to hear a random Arabic word. 
@@ -45,22 +45,23 @@
       <option value="print-font-2">Mirza</option>
       <option value="handwriting">Handwriting</option>
     </select>
-    <button id="select-font">Submit</button>
-
-  </div>
+    <button id="play">Play Word</button>
+    <button id="undo">Undo</button>
+    <button id="show">Show Word</button>
+    <button onclick="testWord()">Check Word</button>
+    <button id="english">Show English</button>
+  </header>
     <hr>
     <div id="keyboard"></div>
     <hr>
     
     <div class="wrapper">
+      <div id="show-eng"></div>
       <div id="show-word"></div>
   <div id="word-holder" class="dropper word animate__animated">
 </div>
 <div class="vertical engfont">
-<button id="play">Play Word</button>
-<button id="show">Show Word</button>
-<button id="undo">Undo</button>
-<button onclick="testWord()">Check Word</button>
+ 
 </div>
 </div>
 
