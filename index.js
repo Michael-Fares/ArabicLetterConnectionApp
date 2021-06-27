@@ -165,6 +165,8 @@ function drop_handler(ev) {
  const div = document.createElement('div')
  div.innerText = data
  ev.target.appendChild(div);
+ div.classList.add('animate__animated')
+ div.classList.add('animate__fadeIn')
 }
 
 
@@ -266,11 +268,13 @@ const makeFont = () => {
     }
     if(fonts.value === 'print-font-1'){
       glyphs[i].style.fontFamily = 'Lateef, cursive'
+      glyphs[i].style.fontSize = '50px'
       wordHolder.style.fontFamily = 'Lateef, cursive'
       display.style.fontFamily = 'Lateef, cursive'
     }
     if(fonts.value === 'print-font-2'){
       glyphs[i].style.fontFamily = 'Mirza, cursive'
+      glyphs[i].style.fontSize = '45px'
       wordHolder.style.fontFamily = 'Mirza, cursive'
       display.style.fontFamily = 'Mirza, cursive'
     }
@@ -278,8 +282,28 @@ const makeFont = () => {
       glyphs[i].style.fontFamily = 'serif'
       wordHolder.style.fontFamily = 'serif'
       display.style.fontFamily = 'serif'
+      glyphs[i].style.fontSize = '40px'
+
     }
   }
   })
 }
 makeFont()
+
+// show english button
+
+const showEnglish = () => {
+  const display = document.querySelector('#show-eng')
+  const button = document.querySelector('#english')
+  button.addEventListener('click', function(){
+    if(display.innerText === '') {
+    display.innerText = testArr[random].e
+    display.style.fontSize = '40px'
+    button.innerText = 'Hide English'
+    } else if (display.innerText = testArr[random].e) {
+      display.innerText = ''
+    button.innerText = 'Show English'
+    }
+  })
+}
+showEnglish()
