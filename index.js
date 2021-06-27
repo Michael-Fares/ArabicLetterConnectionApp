@@ -13,10 +13,38 @@ let testArr = [
    e: 'morning'
 },
 {
-   a: 'بـاب',
+   a: 'بــاب',
    e: 'door'
-}]
+},
+{
+  a: 'كــتــاب',
+  e: 'book'
+},
+{
+  a: 'غــرفــة',
+  e: 'room'
+},
+{
+  a: 'حــجــاب',
+  e: 'hijab'
+},
+{
+  a: 'جــار',
+  e: 'neighbor (m)'
+},
+{
+  a: 'خــبــز',
+  e: 'bread'
+},
+{
+  a: 'دجــاج',
+  e: 'chicken'
+}
+]
+
 let random = Math.floor(Math.random() * testArr.length)
+
+
 
 const synth = window.speechSynthesis;
 
@@ -136,7 +164,6 @@ const makeKeyboard = () => {
      })
      // dragstart event listener added to every letter
      div.addEventListener('dragstart', function(ev){
-       console.log('drag has started')
        ev.dataTransfer.setData('text', ev.target.innerText)
       
      })
@@ -178,33 +205,50 @@ const makeUndo = () => {
   undo.addEventListener('click', function(){
     if(wordHolder.children.length) {
     wordHolder.removeChild(letters.item(letters.length-1));
-    console.log('remove')
     }
   })
 }
 makeUndo()
 
-// testing if it can recognize the word جامعة
 
-
-// maybe can use reEx to do this?
 const testWord = () => {
   let grader = []
   // sample correct word
   let correctWord = testArr[random].a
-  console.log(correctWord)
   
   let writtenWord = wordHolder.children
 
   for(let i=0; i<writtenWord.length; i++) {
-  console.log('written word', writtenWord[i], 'written letter', writtenWord[i].innerText)
   grader.push(writtenWord[i].innerText)
   }
-  console.log(grader)
   let gradedWord = grader.join('')
   if(gradedWord === correctWord) {
-  alert('CORRECT')
-  location.reload()
+  
+  const correct = document.querySelector('.correct')
+  correct.style.display = 'flex';
+
+  correct.classList.add('animate__animated')
+  correct.classList.add('animate__pulse')
+
+  const utterThis = new SpeechSynthesisUtterance('!ممتاز')
+utterThis.lang = "ar-SA"
+utterThis.pitch = 1;
+utterThis.rate = 0.8;
+synth.speak(utterThis)
+
+  setTimeout(function(){
+    correct.style.display = 'none';
+    while(wordHolder.firstChild) {
+      wordHolder.removeChild(wordHolder.firstChild)
+    }
+  }, 3000)
+
+
+  // reset the random index
+  random = Math.floor(Math.random() * testArr.length)
+  // remove word holder childten
+ 
+  
   } else {
   wordHolder.classList.add('animate__headShake')
   setTimeout(function(){  wordHolder.classList.remove('animate__headShake')
@@ -218,7 +262,6 @@ const utterThis = new SpeechSynthesisUtterance(testArr[random].a)
 utterThis.lang = "ar-SA"
 utterThis.pitch = 1;
 utterThis.rate = 0.8;
-console.log(utterThis)
 synth.speak(utterThis)
   }
 
@@ -274,7 +317,7 @@ const makeFont = () => {
     }
     if(fonts.value === 'print-font-2'){
       glyphs[i].style.fontFamily = 'Mirza, cursive'
-      glyphs[i].style.fontSize = '45px'
+      glyphs[i].style.fontSize = '40px'
       wordHolder.style.fontFamily = 'Mirza, cursive'
       display.style.fontFamily = 'Mirza, cursive'
     }

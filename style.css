@@ -1,3 +1,6 @@
+body {
+  height: 100vh;
+}
 .engfont {
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -26,7 +29,7 @@ height: 115px;
 background-color: lightblue;
 direction: rtl;
 padding-right: 20px;
-margin: 20px 25% 0 20px;
+margin: 20px 25% 100px 20px;
 font-size: 50px;
 }
 .wrapper{
@@ -67,4 +70,19 @@ select {
 .label {
   position: absolute;
   right: 30
+}
+.correct {
+  width: 100vw;
+  height: 177px;
+  background-color:rgba(0, 255, 0, 0.8);
+  position: absolute;
+  top: 200;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 160px;
+}
+footer span{
+  margin-left: 20px;
+  margin-bottom: 30px;
 }
