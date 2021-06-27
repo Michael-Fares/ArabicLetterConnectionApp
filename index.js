@@ -39,7 +39,67 @@ let testArr = [
 {
   a: 'دجــاج',
   e: 'chicken'
-}
+},
+{
+  a: 'زهــر',
+  e: 'flowers'
+},
+{
+  a: 'طــالــب',
+  e: 'student (m)'
+},
+{
+  a: 'طــالــبــة',
+  e: 'student (f)'
+},
+{
+  a: 'حــلــيــب',
+  e: 'coffee'
+},
+{
+  a: 'شــاي',
+  e: 'tea'
+},
+{
+  a: 'شــكــراً',
+  e: 'Thank you'
+},
+{
+  a: 'خــضــار',
+  e: 'vegetables'
+},
+{
+  a: 'فــواكــه',
+  e: 'fruits'
+},
+{
+  a: 'آكــل',
+  e: 'I eat'
+},
+{
+  a: 'أشــرب',
+  e: 'I drink'
+},
+{
+  a: 'ســلام',
+  e: 'peace (hello)'
+},
+{
+  a: 'مــوســيــقــى',
+  e: 'music'
+},
+{
+  a: 'مــنــزل',
+  e: 'house'
+},
+{
+  a: 'ســؤال',
+  e: 'question'
+},
+{
+  a: 'عــنــدي',
+  e: 'I have'
+},
 ]
 
 let random = Math.floor(Math.random() * testArr.length)
@@ -350,3 +410,36 @@ const showEnglish = () => {
   })
 }
 showEnglish()
+
+// skip word button
+
+const makeSkipWord = () => {
+  const skip = document.querySelector('#skip')
+  const play = document.querySelector('#play')
+  skip.addEventListener('click', function(){
+    random = Math.floor(Math.random() * testArr.length)
+    play.classList.add('animate__flip')
+    setTimeout(function(){play.classList.remove('animate__flip')
+  }, 2000)
+  play.classList.add('animate__flip')
+
+  })
+}
+
+makeSkipWord()
+
+// about button
+
+const makeAbout = () => {
+  const about = document.querySelector('#about');
+  const aboutText = document.querySelector('.about-text')
+  const close = document.querySelector('.close')
+  about.addEventListener('click', function(){
+   aboutText.style.display = 'flex';
+  })
+  close.addEventListener('click', function(){
+    aboutText.style.display = 'none';
+
+  })
+}
+makeAbout()

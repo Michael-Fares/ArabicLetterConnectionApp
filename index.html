@@ -3,6 +3,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Arabic Letter Connecting Tutor</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
     <link rel="stylesheet" href="./animate.min.css">
 
 <!-- handriting font -->
@@ -30,6 +34,7 @@
     <link href="./style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <button id="about" class="engfont">About</button>
     <header class="header engfont">
       <h1 class="title">Arabic Word Spelling Tutor</h1>
     <p id="instructions">
@@ -40,11 +45,12 @@
 
   
    <div class="controls">
-    <button id="play">Hear Word</button>
+    <button id="play" class="animate__animated">Hear Word</button>
     <button id="undo">Undo</button>
     <button id="show">Show Word</button>
     <button id="english">Show English</button>
     <button onclick="testWord()">Check Word</button>
+    <button id="skip">Skip Word</button>
     <div class="label">
     <label for="fonts">Letter Font Style:</label>
   <select name="fonts" id="fonts">
@@ -56,9 +62,9 @@
   </div>
   </div>
   </header>
-    <hr>
+  
     <div id="keyboard"></div>
-    <hr>
+ 
     
     <div class="wrapper">
       <div class="displays">
@@ -73,16 +79,33 @@
   Excellent!
 </div>
 
+<div class='about-text engfont'>
+  <i class="fas fa-window-close close"></i> 
+  <p class="text">
+    For a new student, learning the Arabic alphabet and how to correctly write and spell in the language can at first seem overwhelming. Not only are the sounds of the letters new and unfamiliar for many, but letters can have up to four different positions based on their position in a word: initial, medial, final, or isloated.
+    <br><br> 
+     The purpose of this simple app is to help new Arabic students better learn the letters and sounds of the Arabic alphabet, by giving them a chance to practice interactively spelling words they hear while visualizing how the letters connect to one another in real time.
+     <br><br>
+     I hope this app will offer my students and my fellow Arabic teachers  alike a new way to make learning Arabic fun!
+     <br><br>
+     If you enjoyed this app, then check out <a href="https://michael-fares.github.io/PortfolioWebsite/index.html" target="blank">my website.</a>
+     <br><br>
+     - Michael Fares
+
+     
+</p>
+</div>
+
 
 
 <!-- NEED TO HIDE THIS KEY!! -->
 
-  <script src="./index.js"></script>
 
     
     <footer class='engfont'>
       <span>© <a href="https://michael-fares.github.io/PortfolioWebsite/index.html" target="blank">Michael Fares</a> 2021</span>
     </footer>
+    <script src="./index.js"></script>
   </body>
 
 </html>
