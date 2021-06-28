@@ -1,6 +1,5 @@
 body {
   height: 100vh;
-  background-color: lightyellow;
 }
 .engfont {
   font-family: 'Source Sans Pro', sans-serif;
@@ -12,7 +11,6 @@ body {
   justify-content: flex-start;
   direction: rtl;
   box-shadow: 2px 2px 10px;
-  background-color: white;
 }
 
 .letter-button {
@@ -39,6 +37,7 @@ font-size: 50px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background-color: lightyellow;
 }
 .vertical {
   display: flex;
@@ -129,4 +128,14 @@ i:hover {
 }
 p a {
 color: white;
+}
+.header{
+  background-color: lightyellow;
+}
+footer {
+  background-color: lightyellow;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
