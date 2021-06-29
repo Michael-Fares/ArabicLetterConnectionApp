@@ -71,8 +71,11 @@ select {
   margin-left: 20px;
 }
 .label {
-  position: absolute;
-  right: 30
+width: 50%;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+flex-wrap: wrap;
 }
 .correct {
   width: 100vw;
@@ -103,8 +106,8 @@ footer span{
 .about-text {
   position: absolute;
   background-color:rgba(0, 0, 0, 0.9);
-  height: 100vh;
-  width: 100vw;
+  height: 1500px;
+  width: 100%;
   top: 0;
   padding: 100px;
   display: none;
@@ -113,6 +116,7 @@ footer span{
 }
 .text {
   color: white;
+  position: relative;
 }
 i {
   position: absolute;
