@@ -54,7 +54,7 @@ let testArr = [
 },
 {
   a: 'حــلــيــب',
-  e: 'coffee'
+  e: 'milk'
 },
 {
   a: 'شــاي',
