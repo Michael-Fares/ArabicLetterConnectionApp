@@ -111,6 +111,10 @@ let testArr = [
 {
   a: 'شــبــاب',
   e: 'youth, guys (group)'
+},
+{
+  a: 'جــيــد',
+  e: 'good'
 }
 ]
 
