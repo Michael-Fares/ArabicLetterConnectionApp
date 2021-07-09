@@ -100,6 +100,18 @@ let testArr = [
   a: 'عــنــدي',
   e: 'I have'
 },
+{
+  a: 'أخ',
+  e: 'brother'
+},
+{
+  a: 'أخــت',
+  e: 'sister'
+},
+{
+  a: 'شــبــاب',
+  e: 'youth, guys (group)'
+}
 ]
 
 let random = Math.floor(Math.random() * testArr.length)
