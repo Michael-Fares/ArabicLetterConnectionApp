@@ -2,7 +2,7 @@
 let testArr = [
 {
   a: 'جــامــعــة',
-  e: 'university'
+  e: 'university',
 },
 {
   a: 'ســيــارة',
@@ -115,6 +115,10 @@ let testArr = [
 {
   a: 'جــيــد',
   e: 'good'
+},
+{
+  a: 'عــصــيــر',
+  e: 'good'
 }
 ]
 
@@ -221,8 +225,7 @@ const hamzaIsolated = new NonConnector('ء', 'ء','HamzaIsolated')
 const alifTanween = new NonConnector('اً', 'اً','alifTanween')
 const alifMadaa = new NonConnector('آ', 'آ','alifMadda')
 const alifMaqsura = new NonConnector('ى', 'ـى','alifMaqsura')
-const laamAlif = new NonConnector('ـلا','لا', 'laamAlif')
-
+const laamAlif = new NonConnector('لا','ـلا', 'laamAlif')
 
 
 const makeKeyboard = () => {
@@ -244,7 +247,6 @@ const makeKeyboard = () => {
       
      })
   })
-
 }
 
 makeKeyboard()
@@ -367,7 +369,6 @@ const makeShowWord = () => {
     } else {
       word.innerText = '';
       show.innerText = 'Show Word'
-
     }
   })
 }
@@ -381,8 +382,8 @@ const makeFont = () => {
   fonts.addEventListener('change', function(){
     for(let i=0; i<glyphs.length; i++) {
     if(fonts.value === 'handwriting'){
-      glyphs[i].style.fontFamily = 'Aref Ruqaa, serif'
-      wordHolder.style.fontFamily = 'Aref Ruqaa, serif'
+      // glyphs[i].style.fontFamily = 'Aref Ruqaa, serif'
+      // wordHolder.style.fontFamily = 'Aref Ruqaa, serif'
       display.style.fontFamily = 'Aref Ruqaa, serif'
     }
     if(fonts.value === 'print-font-1'){
