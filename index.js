@@ -118,10 +118,10 @@ let testArr = [
 },
 {
   a: 'عــصــيــر',
-  e: 'good'
+  e: 'juice'
 }
 ]
-
+// testing git on windows
 let random = Math.floor(Math.random() * testArr.length)
 
 
