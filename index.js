@@ -233,6 +233,7 @@ const makeKeyboard = () => {
   letters.map((letter) => {
   const text = document.createTextNode(letter.isolated)
   letter.morph()
+  // add extra div wrapper to put letter phoneneme in
   const div = document.createElement('div')
     div.classList.add('letter-button')
     div.setAttribute('draggable', 'true')
